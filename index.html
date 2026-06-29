@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zindua School - Learn to code in Africa</title>
@@ -8,13 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <style type="text/tailwindcss">
-      @theme {
+        @theme {
        
        --color-danger: #f56c6c;
        --color-ink: #606266;
@@ -24,32 +24,109 @@
 
       body {
         font-family: "Inter", sans-serif;
-        color: black;
-        --color-mist:#f7f8fa;
       }
+      .mobile-menu {
+        max-height: 0;
+        opacity:0;
+        overflow: hidden;
+        transition: max-height 0.35s ease, opacity 0.3s ease;
+      }
+      #nav-toggle:checked ~ .mobile-menu{
+        max-height: 500px; opacity: 1;
+      }
+      .ham-bar{ transition: transform 0.3s ease, opacity 0.2s ease;}
+      #nav-toggle:checked ~ nav .ham-bar:nth-child(1) { transform: translateY(8px) rotate(45deg);}
+      #nav-toggle:checked ~ nav .ham-bar:nth-child(2) {opacity:0; transform: scaleX(0);}
+      #nav-toggle:checked ~ nav .ham-bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg);}
     </style>
-  </head>
-  <body class="bg-white">
-    <header class="sticky top-0 bg-white border-b border-border ">
+</head>
+
+<body class="bg-white">
+    <header class="sticky top-0 bg-white border-b border-border">
         <input type="checkbox" id="nav-toggle" class="hidden">
-      <nav class="max-w-6x1 mx-auto px-6 flex items-center justify-between gap-8">
+        <nav class="max-w-6x1 mx-auto px-6 py-3 flex items-center justify-between gap-8">
             <a href="#" class="flex flex-col leading-none shrink-0">
                 <span class="text-danger text-2x1 tracking-right">Zindua</span>
-            <span class="text-ink text-xs font-medium tracking-widest -mt-0.5">School</span> 
-                </a>
+                <span class="text-ink text-xs font-medium tracking-widest -mt-0.5">School</span>
+            </a>
 
 
-                <ul class="hidden md:flex items-center gap-1 text-sm font-medium text-ink flex-1">
-                    <li><a href="#programs" class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Programs</a></li>
-                    <li><a href="#plans" class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Financing Plans</a></li>
-                    <li><a href="#resources" class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Resources</a></li>
-                    <li><a href="#more" class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">More</a></li>
-                    <li><a href="" class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Login</a></li>
-                    <li><a href="#programs" class="bg-danger text-white font-semi-bold text-sm px-5 py-2.5 px-3 py-2 rounded-[7px] hover:bg-danger hover:text-ink shadow-small transition-colors duration-150">Apply Today</a></li>
-                </ul>
-            
-      </nav>
+            <ul class="hidden md:flex items-center gap-1 text-sm font-medium text-ink flex-1">
+                <li><a href="#programs"
+                        class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Programs</a>
+                </li>
+                <li><a href="#plans"
+                        class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Financing
+                        Plans</a></li>
+                <li><a href="#resources"
+                        class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Resources</a>
+                </li>
+                <li><a href="#more"
+                        class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">More</a>
+                </li>
+                <li><a href=""
+                        class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Login</a>
+                </li>
+                <li><a href="#programs"
+                        class="bg-danger text-white font-semi-bold text-sm px-5 py-2.5 px-3 py-2 rounded-[7px] hover:bg-danger hover:text-ink shadow-small transition-colors duration-150">Apply
+                        Today</a></li>
+            </ul>
+            <label for="nav-toggle" class="md:hidden flex flex-col gap-1.5 p-2 rounded cursor-pointer"
+                aria-label="Toggle menu">
+                <span class="ham-bar block w-6 h-0.5 bg-ink origin-center"></span>
+                <span class="ham-bar block w-6 h-0.5 bg-ink origin-center"></span>
+                <span class="ham-bar block w-6 h-0.5 bg-ink origin-center"></span>
+            </label>
+
+        </nav>
+        <div class="mobie-menu md:hidden bg-white border-t border-border">
+            <ul class="flex flex-col px-6 py-4 gap-3 text-sm font-medium text-ink">
+                <li><a href="#programs"
+                        class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Programs</a>
+                </li>
+                <li><a href="#plans"
+                        class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Financing
+                        Plans</a></li>
+                <li><a href="#resources"
+                        class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Resources</a>
+                </li>
+                <li><a href="#more"
+                        class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">More</a>
+                </li>
+                <li><a href=""
+                        class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Login</a>
+                </li>
+                <li><a href="#programs"
+                        class="bg-danger text-white font-semi-bold text-sm px-5 py-2.5 px-3 py-2 rounded-[7px] hover:bg-danger hover:text-ink shadow-small transition-colors duration-150">Apply
+                        Today</a></li>
+            </div>
     </header>
-    
-  </body>
+    <main>
+        <section class="bg-gray-100">
+            <div class="max-w-7xl mx-auto px-8 py-20">
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <p>ZINDUA CODING SCHOOL: 4.9/5 RATING (80+ REVIEWS)</p>
+                        <h1 class="text-2xl font-bold leading-tight mb-6">Zindua your career in tech at Kenya's top-rated tech accelerator</h1>
+                        <p class="text-gray-600 text-base mb-6">Upskill into Software or Data, or specialize in AI, DevOps, or Data Engineering through our immersive mentor-led programs. We offer technical depth to turn beginners into pros and pros into specialists; now integrating AI-assisted coding and cloud-anchored curricula. </p>
+                        <div>
+                            <button class="bg-danger text-white pd-6 py-3 rounded-lg font-semibold">Browse Programs</button>
+                            <button class="border border-danger px-6 py-3 rounded-lg font-semibold">Apply Now</button>
+                            </div>
+
+                        </div>
+                        <div>
+                            <img class="w-full rounded-3xl shadow-lg" src="assets/Emelda-Photo-edited-1.jpeg" alt="Student">
+                            </div>
+                    </div>
+                
+                
+                </div>
+
+            
+            </section>
+        </main>
+
+</body>
+
 </html>
