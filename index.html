@@ -1,11 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zindua School - Learn to code in Africa</title>
-</head>
-<body>
-    <h1>Zindua School</h1>
-</body>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style type="text/tailwindcss">
+      @theme {
+       
+       --color-danger: #f56c6c;
+       --color-ink: #606266;
+        --font-heading: "Inter", sans-serif;
+        --font-sans: "Inter", sans-serif;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        color: black;
+        --color-mist:#f7f8fa;
+      }
+    </style>
+  </head>
+  <body class="bg-white">
+    <header class="sticky top-0 bg-white border-b border-border ">
+        <input type="checkbox" id="nav-toggle" class="hidden">
+      <nav class="max-w-6x1 mx-auto px-6 flex items-center justify-between gap-8">
+            <a href="#" class="flex flex-col leading-none shrink-0">
+                <span class="text-danger text-2x1 tracking-right">Zindua</span>
+            <span class="text-ink text-xs font-medium tracking-widest -mt-0.5">School</span> 
+                </a>
+
+
+                <ul class="hidden md:flex items-center gap-1 text-sm font-medium text-ink flex-1">
+                    <li><a href="#programs" class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Programs</a></li>
+                    <li><a href="#plans" class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Financing Plans</a></li>
+                    <li><a href="#resources" class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Resources</a></li>
+                    <li><a href="#more" class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">More</a></li>
+                    <li><a href="" class="flex items-center gap-1 px-3 py-2 rounded-[7px] hover:bg-mist hover:text-danger transition-colors duration-150">Login</a></li>
+                    <li><a href="#programs" class="bg-danger text-white font-semi-bold text-sm px-5 py-2.5 px-3 py-2 rounded-[7px] hover:bg-danger hover:text-ink shadow-small transition-colors duration-150">Apply Today</a></li>
+                </ul>
+            
+      </nav>
+    </header>
+    
+  </body>
 </html>
